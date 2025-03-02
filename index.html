@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="htmlElement">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +45,7 @@
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-link {
@@ -57,6 +58,52 @@
         .nav-link:hover {
             color: var(--accent-color);
             border-bottom: 2px solid var(--text-white);
+        }
+
+        .language-switcher {
+            position: relative;
+        }
+
+        .language-switcher button {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border: 2px solid var(--text-white);
+            transition: background 0.3s;
+        }
+
+        .language-switcher button:hover {
+            background: #90CAF9;
+        }
+
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--accent-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .language-dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .language-dropdown a:hover {
+            background: #90CAF9;
+        }
+
+        .language-switcher:hover .language-dropdown {
+            display: block;
         }
 
         .hero-section {
@@ -99,6 +146,16 @@
             border: 3px solid var(--primary-color);
             position: relative;
             z-index: 1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .hero-image img {
@@ -121,8 +178,8 @@
         }
 
         .cta-button {
-            background: var(--accent-color);
-            color: var(--primary-color);
+            background: var(--primary-color); /* تغيير الخلفية إلى اللون الأزرق */
+            color: var(--text-white); /* تغيير لون النص إلى الأبيض */
             padding: 15px 40px;
             border-radius: 30px;
             text-decoration: none;
@@ -134,7 +191,7 @@
 
         .cta-button:hover {
             transform: translateY(-5px);
-            background: #90CAF9;
+            background: #0b3d91; /* لون أزرق داكن عند التحويم */
         }
 
         .features-section {
@@ -349,6 +406,13 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+            .language-switcher {
+                position: static;
+            }
+            .language-dropdown {
+                right: auto;
+                left: 0;
+            }
         }
 
         /* انيميشنات مخصصة */
@@ -387,29 +451,51 @@
         .animate__pulse {
             --animate-delay: 0.5s;
         }
+
+        /* أنيميشن لتغيير اللغة */
+        .language-transition {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .language-transition.fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .language-transition.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <a href="#" class="logo animate__animated animate__fadeInDown">Enjoy Marketing</a>
         <nav class="nav-links">
-            <a href="#features" class="nav-link animate__animated animate__fadeInDown">خدماتنا</a>
-            <a href="#offers" class="nav-link animate__animated animate__fadeInDown">عروضنا</a>
-            <a href="#contact" class="nav-link animate__animated animate__fadeInDown">تواصل معنا</a>
-            <a href="#about" class="nav-link animate__animated animate__fadeInDown">من نحن</a>
+            <a href="#features" class="nav-link animate__animated animate__fadeInDown" data-ar="خدماتنا" data-en="Our Services">خدماتنا</a>
+            <a href="#offers" class="nav-link animate__animated animate__fadeInDown" data-ar="عروضنا" data-en="Our Offers">عروضنا</a>
+            <a href="#contact" class="nav-link animate__animated animate__fadeInDown" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
+            <a href="#about" class="nav-link animate__animated animate__fadeInDown" data-ar="من نحن" data-en="About Us">من نحن</a>
             <a href="https://www.facebook.com/profile.php?id=61569700624411" 
                class="nav-link animate__animated animate__fadeInDown" 
-               target="_blank">صفحتنا</a>
+               target="_blank" data-ar="صفحتنا" data-en="Our Page">صفحتنا</a>
         </nav>
+        <div class="language-switcher">
+            <button id="languageSwitcherButton">AR</button>
+            <div class="language-dropdown">
+                <a href="#" data-lang="ar">العربية</a>
+                <a href="#" data-lang="en">English</a>
+            </div>
+        </div>
     </header>
 
     <section class="hero-section">
         <div class="hero-content">
             <h1 class="hero-title animate__animated animate__fadeInUp">
-                <span>اعداد و ادارة</span>
-                <span>و تمويل صفحات الفيس بوك</span>
+                <span data-ar="اعداد و ادارة" data-en="Setup and Management">اعداد و ادارة</span>
+                <span data-ar="و تمويل صفحات الفيس بوك" data-en="and Funding of Facebook Pages">و تمويل صفحات الفيس بوك</span>
             </h1>
-            <a href="#features" class="cta-button animate__animated animate__zoomIn">ابدأ الآن</a>
+            <a href="#features" class="cta-button animate__animated animate__zoomIn" data-ar="ابدأ الآن" data-en="Start Now">ابدأ الآن</a>
         </div>
         <div class="hero-image animate__animated animate__fadeInRight">
             <img 
@@ -421,37 +507,38 @@
     </section>
 
     <section class="features-section" id="features">
-        <h2 class="features-title animate__animated animate__fadeInLeft">ماذا نقدم لك؟</h2>
+        <h2 class="features-title animate__animated animate__fadeInLeft" data-ar="ماذا نقدم لك؟" data-en="What Do We Offer?">ماذا نقدم لك؟</h2>
         <ul class="features-list">
-            <li class="feature-item animate__animated animate__fadeInLeft">اعداد وانشاء صفحة كاملة لعملك</li>
-            <li class="feature-item animate__animated animate__fadeInLeft">تصميم لوغو وثيم خاص بصفحتك</li>
-            <li class="feature-item animate__animated animate__fadeInLeft">إدارة كاملة لصفحتك الفيسبوك ومتابعة عملائك</li>
-            <li class="feature-item animate__animated animate__fadeInLeft">إدارة حملاتك الإعلانية</li>
-            <li class="feature-item animate__animated animate__fadeInLeft">عمل تصاميم للإعلانات وبوستات اعلانية يومية</li>
-            <li class="feature-item animate__animated animate__fadeInLeft">متابعة العملاء والرد على استفسارتهم</li>
-            <li class="feature-item animate__animated animate__fadeInLeft">تمويل اعلاناتك واستهداف العملاء المحتملين</li>
+            <li class="feature-item animate__animated animate__fadeInLeft" data-ar="اعداد وانشاء صفحة كاملة لعملك" data-en="Setup and creation of a complete page for your business">اعداد وانشاء صفحة كاملة لعملك</li>
+            <li class="feature-item animate__animated animate__fadeInLeft" data-ar="تصميم لوغو وثيم خاص بصفحتك" data-en="Designing a logo and theme for your page">تصميم لوغو وثيم خاص بصفحتك</li>
+            <li class="feature-item animate__animated animate__fadeInLeft" data-ar="إدارة كاملة لصفحتك الفيسبوك ومتابعة عملائك" data-en="Full management of your Facebook page and customer follow-up">إدارة كاملة لصفحتك الفيسبوك ومتابعة عملائك</li>
+            <li class="feature-item animate__animated animate__fadeInLeft" data-ar="إدارة حملاتك الإعلانية" data-en="Management of your advertising campaigns">إدارة حملاتك الإعلانية</li>
+            <li class="feature-item animate__animated animate__fadeInLeft" data-ar="عمل تصاميم للإعلانات وبوستات اعلانية يومية" data-en="Creating designs for ads and daily promotional posts">عمل تصاميم للإعلانات وبوستات اعلانية يومية</li>
+            <li class="feature-item animate__animated animate__fadeInLeft" data-ar="متابعة العملاء والرد على استفسارتهم" data-en="Customer follow-up and responding to inquiries">متابعة العملاء والرد على استفسارتهم</li>
+            <li class="feature-item animate__animated animate__fadeInLeft" data-ar="تمويل اعلاناتك واستهداف العملاء المحتملين" data-en="Funding your ads and targeting potential customers">تمويل اعلاناتك واستهداف العملاء المحتملين</li>
         </ul>
     </section>
 
     <section class="offers-section" id="offers">
-        <h2 class="offers-title animate__animated animate__fadeInUp">عروضنا الخاصة 🎁</h2>
+        <h2 class="offers-title animate__animated animate__fadeInUp" data-ar="عروضنا الخاصة 🎁" data-en="Our Special Offers 🎁">عروضنا الخاصة 🎁</h2>
         <div class="offers-grid">
             <div class="offer-card animate__animated animate__zoomIn">
-                <h3 class="offer-title">عرض الــ80</h3>
+                <h3 class="offer-title" data-ar="عرض الــ80" data-en="Offer 80">عرض الــ80</h3>
                 <div class="offer-price">80JD</div>
                 <ul class="offer-features">
-                    <li>✅ إعداد وإنشاء صفحة كاملة لعملك </li>
-                    <li>✅ تصميم لوغو وثيم خاص بصفحتك </li>
-                    <li>✅ عمل تصاميم للإعلانات وبوستات اعلانية يومية </li>
-                    <li>✅ إدارة حملاتك الإعلانية</li>
-                    <li>✅ متابعة العملاء والرد على استفسارتهم </li>
-                    <li>✅ تمويل اعلاناتك واستهداف العملاء المحتملين </li>
+                    <li data-ar="✅ إعداد وإنشاء صفحة كاملة لعملك" data-en="✅ Setup and creation of a complete page for your business">✅ إعداد وإنشاء صفحة كاملة لعملك</li>
+                    <li data-ar="✅ تصميم لوغو وثيم خاص بصفحتك" data-en="✅ Designing a logo and theme for your page">✅ تصميم لوغو وثيم خاص بصفحتك</li>
+                    <li data-ar="✅ عمل تصاميم للإعلانات وبوستات اعلانية يومية" data-en="✅ Creating designs for ads and daily promotional posts">✅ عمل تصاميم للإعلانات وبوستات اعلانية يومية</li>
+                    <li data-ar="✅ إدارة حملاتك الإعلانية" data-en="✅ Management of your advertising campaigns">✅ إدارة حملاتك الإعلانية</li>
+                    <li data-ar="✅ متابعة العملاء والرد على استفسارتهم" data-en="✅ Customer follow-up and responding to inquiries">✅ متابعة العملاء والرد على استفسارتهم</li>
+                    <li data-ar="✅ تمويل اعلاناتك واستهداف العملاء المحتملين" data-en="✅ Funding your ads and targeting potential customers">✅ تمويل اعلاناتك واستهداف العملاء المحتملين</li>
                 </ul>
                 <a 
                     href="https://www.facebook.com/permalink.php?story_fbid=pfbid0oh4J1TwyYgBwm47UpcGW1duimxb9XdyeKwvh2YpNVtovdg1PyqRdmo8uRWWs1jmQl&id=61569700624411" 
                     class="cta-button" 
                     target="_blank"
                     style="display: block; text-align: center; margin-top: 1rem;"
+                    data-ar="عرض التفاصيل" data-en="View Details"
                 >
                     عرض التفاصيل
                 </a>
@@ -461,28 +548,79 @@
             href="https://www.facebook.com/profile.php?id=61569700624411" 
             class="facebook-link animate__animated animate__fadeInUp"
             target="_blank"
+            data-ar="للمزيد من التفاصيل، تفضل بزيارة صفحتنا على الفيس بوك 👈" data-en="For more details, visit our Facebook page 👈"
         >
             للمزيد من التفاصيل، تفضل بزيارة صفحتنا على الفيس بوك 👈
         </a>
     </section>
 
     <section class="contact-section" id="contact">
-        <h2 class="contact-title animate__animated animate__fadeInUp">تواصل معنا</h2>
+        <h2 class="contact-title animate__animated animate__fadeInUp" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
         <div class="contact-options">
-            <a href="https://www.facebook.com/messages/t/480197935179619" class="contact-button animate__animated animate__zoomIn" target="_blank">ماسنجر</a>
+            <a href="https://www.facebook.com/messages/t/480197935179619" class="contact-button animate__animated animate__zoomIn" target="_blank" data-ar="ماسنجر" data-en="Messenger">ماسنجر</a>
             <a href="https://wa.me/962791044458
-" class="contact-button whatsapp animate__animated animate__zoomIn" target="_blank">واتساب</a>
+" class="contact-button whatsapp animate__animated animate__zoomIn" target="_blank" data-ar="واتساب" data-en="WhatsApp">واتساب</a>
         </div>
     </section>
 
     <section class="about-section" id="about">
-        <h2 class="about-title animate__animated animate__fadeInUp">من نحن</h2>
-        <p class="about-description animate__animated animate__fadeInUp">
+        <h2 class="about-title animate__animated animate__fadeInUp" data-ar="من نحن" data-en="About Us">من نحن</h2>
+        <p class="about-description animate__animated animate__fadeInUp" data-ar="نحن نعمل على تصميم الصور من المنزل. نحن نقدم خدمات إدارة صفحات الفيسبوك، تصميم الإعلانات، وإدارة الحملات الإعلانية. هدفنا هو مساعدتك في تحقيق النجاح لعملك من خلال حلول تسويقية مبتكرة وفعالة." data-en="We work on designing images from home. We offer Facebook page management, ad design, and advertising campaign management. Our goal is to help you achieve success for your business through innovative and effective marketing solutions.">
             نحن نعمل على تصميم الصور من المنزل. نحن نقدم خدمات إدارة صفحات الفيسبوك، تصميم الإعلانات، وإدارة الحملات الإعلانية. هدفنا هو مساعدتك في تحقيق النجاح لعملك من خلال حلول تسويقية مبتكرة وفعالة.
         </p>
     </section>
 
     <script>
+        // تغيير اللغة مع أنيميشن
+        const languageSwitcherButton = document.getElementById('languageSwitcherButton');
+        const htmlElement = document.getElementById('htmlElement');
+        const elementsToTranslate = document.querySelectorAll('[data-ar], [data-en]');
+
+        let currentLanguage = 'ar';
+
+        const changeLanguage = (lang) => {
+            // إضافة أنيميشن fade-out للنصوص
+            elementsToTranslate.forEach(element => {
+                element.classList.add('language-transition', 'fade-out');
+            });
+
+            // الانتظار حتى تنتهي أنيميشن fade-out
+            setTimeout(() => {
+                currentLanguage = lang;
+                htmlElement.setAttribute('dir', currentLanguage === 'ar' ? 'rtl' : 'ltr');
+                htmlElement.setAttribute('lang', currentLanguage);
+
+                // تحديث النصوص
+                elementsToTranslate.forEach(element => {
+                    if (element.tagName === 'A' && element.hasAttribute('data-ar')) {
+                        element.textContent = currentLanguage === 'ar' ? element.getAttribute('data-ar') : element.getAttribute('data-en');
+                    } else if (element.hasAttribute('data-ar')) {
+                        element.textContent = currentLanguage === 'ar' ? element.getAttribute('data-ar') : element.getAttribute('data-en');
+                    }
+                    element.classList.remove('fade-out');
+                    element.classList.add('fade-in');
+                });
+
+                languageSwitcherButton.textContent = currentLanguage === 'ar' ? 'AR' : 'EN';
+
+                // إزالة أنيميشن fade-in بعد انتهائها
+                setTimeout(() => {
+                    elementsToTranslate.forEach(element => {
+                        element.classList.remove('language-transition', 'fade-in');
+                    });
+                }, 500); // نفس مدة الانتقال
+            }, 500); // نفس مدة الانتقال
+        };
+
+        document.querySelectorAll('.language-dropdown a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = link.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
+
+        // التمرير السلس
         document.getElementById('scrollTrigger').addEventListener('click', () => {
             document.getElementById('features').scrollIntoView({
                 behavior: 'smooth'
