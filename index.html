@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enjoy Marketing - إعداد وإدارة صفحات فيسبوك</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Tajawal:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
             --primary-color: #0D47A1;
@@ -126,7 +127,7 @@
             border-radius: 30px;
             text-decoration: none;
             display: inline-block;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background 0.3s;
             font-weight: bold;
             border: 2px solid var(--text-white);
         }
@@ -195,7 +196,7 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             color: var(--text-black);
             max-width: 500px;
             margin: 0 auto;
@@ -203,6 +204,7 @@
 
         .offer-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .offer-title {
@@ -272,7 +274,7 @@
             border-radius: 30px;
             text-decoration: none;
             display: inline-block;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background 0.3s;
             font-weight: bold;
             border: 2px solid var(--text-white);
         }
@@ -348,31 +350,68 @@
                 gap: 1rem;
             }
         }
+
+        /* انيميشنات مخصصة */
+        .animate__animated {
+            --animate-duration: 1s;
+        }
+
+        .animate__fadeInUp {
+            --animate-delay: 0.5s;
+        }
+
+        .animate__fadeInLeft {
+            --animate-delay: 0.7s;
+        }
+
+        .animate__fadeInRight {
+            --animate-delay: 0.7s;
+        }
+
+        .animate__zoomIn {
+            --animate-delay: 1s;
+        }
+
+        .animate__slideInLeft {
+            --animate-delay: 0.5s;
+        }
+
+        .animate__slideInRight {
+            --animate-delay: 0.5s;
+        }
+
+        .animate__bounceIn {
+            --animate-delay: 0.5s;
+        }
+
+        .animate__pulse {
+            --animate-delay: 0.5s;
+        }
     </style>
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Enjoy Marketing</a>
+        <a href="#" class="logo animate__animated animate__fadeInDown">Enjoy Marketing</a>
         <nav class="nav-links">
-            <a href="#features" class="nav-link">خدماتنا</a>
-            <a href="#offers" class="nav-link">عروضنا</a>
-            <a href="#contact" class="nav-link">تواصل معنا</a>
-            <a href="#about" class="nav-link">من نحن</a>
+            <a href="#features" class="nav-link animate__animated animate__fadeInDown">خدماتنا</a>
+            <a href="#offers" class="nav-link animate__animated animate__fadeInDown">عروضنا</a>
+            <a href="#contact" class="nav-link animate__animated animate__fadeInDown">تواصل معنا</a>
+            <a href="#about" class="nav-link animate__animated animate__fadeInDown">من نحن</a>
             <a href="https://www.facebook.com/profile.php?id=61569700624411" 
-               class="nav-link" 
+               class="nav-link animate__animated animate__fadeInDown" 
                target="_blank">صفحتنا</a>
         </nav>
     </header>
 
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">
+            <h1 class="hero-title animate__animated animate__fadeInUp">
                 <span>اعداد و ادارة</span>
                 <span>و تمويل صفحات الفيس بوك</span>
             </h1>
-            <a href="#features" class="cta-button">ابدأ الآن</a>
+            <a href="#features" class="cta-button animate__animated animate__zoomIn">ابدأ الآن</a>
         </div>
-        <div class="hero-image">
+        <div class="hero-image animate__animated animate__fadeInRight">
             <img 
                 src="your-image.png" 
                 alt="Enjoy Marketing" 
@@ -382,22 +421,22 @@
     </section>
 
     <section class="features-section" id="features">
-        <h2 class="features-title">ماذا نقدم لك؟</h2>
+        <h2 class="features-title animate__animated animate__fadeInLeft">ماذا نقدم لك؟</h2>
         <ul class="features-list">
-            <li class="feature-item">اعداد وانشاء صفحة كاملة لعملك</li>
-            <li class="feature-item">تصميم لوغو وثيم خاص بصفحتك</li>
-            <li class="feature-item">إدارة كاملة لصفحتك الفيسبوك ومتابعة عملائك</li>
-            <li class="feature-item">إدارة حملاتك الإعلانية</li>
-            <li class="feature-item">عمل تصاميم للإعلانات وبوستات اعلانية يومية</li>
-            <li class="feature-item">متابعة العملاء والرد على استفسارتهم</li>
-            <li class="feature-item">تمويل اعلاناتك واستهداف العملاء المحتملين</li>
+            <li class="feature-item animate__animated animate__fadeInLeft">اعداد وانشاء صفحة كاملة لعملك</li>
+            <li class="feature-item animate__animated animate__fadeInLeft">تصميم لوغو وثيم خاص بصفحتك</li>
+            <li class="feature-item animate__animated animate__fadeInLeft">إدارة كاملة لصفحتك الفيسبوك ومتابعة عملائك</li>
+            <li class="feature-item animate__animated animate__fadeInLeft">إدارة حملاتك الإعلانية</li>
+            <li class="feature-item animate__animated animate__fadeInLeft">عمل تصاميم للإعلانات وبوستات اعلانية يومية</li>
+            <li class="feature-item animate__animated animate__fadeInLeft">متابعة العملاء والرد على استفسارتهم</li>
+            <li class="feature-item animate__animated animate__fadeInLeft">تمويل اعلاناتك واستهداف العملاء المحتملين</li>
         </ul>
     </section>
 
     <section class="offers-section" id="offers">
-        <h2 class="offers-title">عروضنا الخاصة</h2>
+        <h2 class="offers-title animate__animated animate__fadeInUp">عروضنا الخاصة 🎁</h2>
         <div class="offers-grid">
-            <div class="offer-card">
+            <div class="offer-card animate__animated animate__zoomIn">
                 <h3 class="offer-title">عرض الــ80</h3>
                 <div class="offer-price">80JD</div>
                 <ul class="offer-features">
@@ -408,11 +447,19 @@
                     <li>✅ متابعة العملاء والرد على استفسارتهم </li>
                     <li>✅ تمويل اعلاناتك واستهداف العملاء المحتملين </li>
                 </ul>
+                <a 
+                    href="https://www.facebook.com/permalink.php?story_fbid=pfbid0oh4J1TwyYgBwm47UpcGW1duimxb9XdyeKwvh2YpNVtovdg1PyqRdmo8uRWWs1jmQl&id=61569700624411" 
+                    class="cta-button" 
+                    target="_blank"
+                    style="display: block; text-align: center; margin-top: 1rem;"
+                >
+                    عرض التفاصيل
+                </a>
             </div>
         </div>
         <a 
             href="https://www.facebook.com/profile.php?id=61569700624411" 
-            class="facebook-link"
+            class="facebook-link animate__animated animate__fadeInUp"
             target="_blank"
         >
             للمزيد من التفاصيل، تفضل بزيارة صفحتنا على الفيس بوك 👈
@@ -420,16 +467,16 @@
     </section>
 
     <section class="contact-section" id="contact">
-        <h2 class="contact-title">تواصل معنا</h2>
+        <h2 class="contact-title animate__animated animate__fadeInUp">تواصل معنا</h2>
         <div class="contact-options">
-            <a href="https://m.me/61569700624411" class="contact-button" target="_blank">ماسنجر</a>
-            <a href="https://wa.me/1234567890" class="contact-button whatsapp" target="_blank">واتساب</a>
+            <a href="https://m.me/61569700624411" class="contact-button animate__animated animate__zoomIn" target="_blank">ماسنجر</a>
+            <a href="https://wa.me/1234567890" class="contact-button whatsapp animate__animated animate__zoomIn" target="_blank">واتساب</a>
         </div>
     </section>
 
     <section class="about-section" id="about">
-        <h2 class="about-title">من نحن</h2>
-        <p class="about-description">
+        <h2 class="about-title animate__animated animate__fadeInUp">من نحن</h2>
+        <p class="about-description animate__animated animate__fadeInUp">
             نحن نعمل على تصميم الصور من المنزل. نحن نقدم خدمات إدارة صفحات الفيسبوك، تصميم الإعلانات، وإدارة الحملات الإعلانية. هدفنا هو مساعدتك في تحقيق النجاح لعملك من خلال حلول تسويقية مبتكرة وفعالة.
         </p>
     </section>
@@ -454,6 +501,22 @@
                 });
             });
         });
+
+        // إضافة انيميشنات عند التمرير
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate__animated');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = elementTop < window.innerHeight && elementBottom >= 0;
+                if (isVisible) {
+                    element.classList.add('animate__fadeInUp');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
