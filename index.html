@@ -23,6 +23,11 @@
             box-sizing: border-box;
         }
 
+        body, html {
+            width: 100%;
+            overflow-x: hidden; /* منع التمرير الأفقي */
+        }
+
         .header {
             background: var(--primary-color);
             padding: 1rem 5%;
@@ -110,7 +115,7 @@
             padding: 150px 5% 60px;
             background: var(--primary-color) url('background1-image.png') no-repeat center center/cover;
             color: var(--text-white);
-            min-height: 80vh;
+            min-height: 100vh; /* تغيير min-height إلى 100vh */
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -557,7 +562,7 @@
     <section class="contact-section" id="contact">
         <h2 class="contact-title animate__animated animate__fadeInUp" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
         <div class="contact-options">
-            <a href="https://www.facebook.com/messages/t/480197935179619" class="contact-button animate__animated animate__zoomIn" target="_blank" data-ar="ماسنجر" data-en="Messenger">ماسنجر</a>
+            <a href="https://www.messenger.com/t/480197935179619" class="contact-button animate__animated animate__zoomIn" target="_blank" data-ar="ماسنجر" data-en="Messenger">ماسنجر</a>
             <a href="https://wa.me/962791044458
 
 " class="contact-button whatsapp animate__animated animate__zoomIn" target="_blank" data-ar="واتساب" data-en="WhatsApp">واتساب</a>
