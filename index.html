@@ -205,6 +205,9 @@
             text-align: right;
             color: #333;
             border-top: 3px solid var(--primary-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .features-title {
@@ -212,11 +215,13 @@
             font-size: 2.2rem;
             margin-bottom: 2rem;
             color: var(--text-black);
+            width: 100%;
         }
 
         .features-list {
             list-style: none;
             padding: 0;
+            width: 60%;
         }
 
         .feature-item {
@@ -229,6 +234,100 @@
 
         .feature-item::before {
             content: "🔹";
+            color: var(--accent-color);
+        }
+
+        .steps-section {
+            padding: 4rem 5%;
+            background: #f9f9f9;
+            text-align: right;
+            color: #333;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .steps-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .step-item {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-item::before {
+            content: "✅";
+            color: var(--accent-color);
+        }
+
+        .success-section {
+            width: 35%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .success-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .success-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .success-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .success-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .success-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .success-card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .success-card a:hover {
             color: var(--accent-color);
         }
 
@@ -418,6 +517,15 @@
                 right: auto;
                 left: 0;
             }
+            .features-section {
+                flex-direction: column;
+            }
+            .features-list, .success-section {
+                width: 100%;
+            }
+            .success-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* انيميشنات مخصصة */
@@ -522,21 +630,56 @@
             <li class="feature-item animate__animated animate__fadeInLeft" data-ar="متابعة العملاء والرد على استفسارتهم" data-en="Customer follow-up and responding to inquiries">متابعة العملاء والرد على استفسارتهم</li>
             <li class="feature-item animate__animated animate__fadeInLeft" data-ar="تمويل اعلاناتك واستهداف العملاء المحتملين" data-en="Funding your ads and targeting potential customers">تمويل اعلاناتك واستهداف العملاء المحتملين</li>
         </ul>
+        <div class="success-section animate__animated animate__fadeInRight">
+            <h3 class="success-title" data-ar="صفحات تحت إدارتنا" data-en="Pages Under Our Management">صفحات تحت إدارتنا</h3>
+            <div class="success-grid">
+                <div class="success-card">
+                    <img src="success1.jpg" alt="روائع طيبة">
+                    <h3 data-ar="روائع طيبة" data-en="Rawae Tayyiba">روائع طيبة</h3>
+                    <a href="https://www.facebook.com/rawayietayiba.jo?rdid=EtLfkDo9ecnk04Dn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F163CvCNgcy%2F" target="_blank" data-ar="زيارة الصفحة" data-en="Visit Page">زيارة الصفحة</a>
+                </div>
+                <div class="success-card">
+                    <img src="success2.jpg" alt="الكنج لادوات البناء">
+                    <h3 data-ar="الكنج لادوات البناء" data-en="Al-King for Construction Tools">الكنج لادوات البناء</h3>
+                    <a href="https://www.facebook.com/profile.php?id=61571625906986&rdid=TPLqtP8Flm1BZfw7&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18gzyMhdEs%2F" target="_blank" data-ar="زيارة الصفحة" data-en="Visit Page">زيارة الصفحة</a>
+                </div>
+                <div class="success-card">
+                    <img src="success3.jpg" alt="YOUR GIFT SHOP">
+                    <h3 data-ar="YOUR GIFT SHOP" data-en="YOUR GIFT SHOP">YOUR GIFT SHOP</h3>
+                    <a href="https://www.facebook.com/profile.php?id=100075792587395&rdid=7MPzvnKVDM7RuGWz&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FFNZ9qQrX%2F" target="_blank" data-ar="زيارة الصفحة" data-en="Visit Page">زيارة الصفحة</a>
+                </div>
+                <div class="success-card">
+                    <img src="success4.jpg" alt="المعلمة سونا">
+                    <h3 data-ar="المعلمة سونا" data-en="Teacher Sona">المعلمة سونا</h3>
+                    <a href="https://www.facebook.com/profile.php?id=61573624521066&rdid=9oFNmkhJPNWU8JTn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A7KrpiSML%2F" target="_blank" data-ar="زيارة الصفحة" data-en="Visit Page">زيارة الصفحة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps-section" id="steps">
+        <h2 class="steps-title animate__animated animate__fadeInUp" data-ar="الخطوات التي قمنا بها لتقوية الصفحة" data-en="Steps We Took to Strengthen the Page">الخطوات التي قمنا بها لتقوية الصفحة</h2>
+        <ul class="steps-list">
+            <li class="step-item animate__animated animate__fadeInUp" data-ar="زيادة عدد المتابعين: تمكنت من رفع عدد المتابعين لعدة صفحات بشكل ملحوظ من خلال استراتيجيات فعالة في المحتوى والترويج." data-en="Increasing Followers: Successfully increased the number of followers for several pages through effective content and promotion strategies.">زيادة عدد المتابعين: تمكنت من رفع عدد المتابعين لعدة صفحات بشكل ملحوظ من خلال استراتيجيات فعالة في المحتوى والترويج.</li>
+            <li class="step-item animate__animated animate__fadeInUp" data-ar="تحقيق معدلات تفاعل عالية: من خلال تحليل الجمهور ونشر المحتوى المناسب، وصلت بعض المنشورات إلى آلاف التفاعلات والمشاركات." data-en="Achieving High Engagement Rates: Through audience analysis and publishing relevant content, some posts reached thousands of interactions and shares.">تحقيق معدلات تفاعل عالية: من خلال تحليل الجمهور ونشر المحتوى المناسب، وصلت بعض المنشورات إلى آلاف التفاعلات والمشاركات.</li>
+            <li class="step-item animate__animated animate__fadeInUp" data-ar="إدارة الحملات الإعلانية بنجاح: قمت بتمويل الصفحات وتحقيق أفضل عائد على الاستثمار عبر استهداف دقيق وإعلانات مؤثرة." data-en="Successfully Managing Advertising Campaigns: Funded pages and achieved the best ROI through precise targeting and impactful ads.">إدارة الحملات الإعلانية بنجاح: قمت بتمويل الصفحات وتحقيق أفضل عائد على الاستثمار عبر استهداف دقيق وإعلانات مؤثرة.</li>
+            <li class="step-item animate__animated animate__fadeInUp" data-ar="تحسين العلامة التجارية: ساعدت في بناء هوية قوية لصفحات العملاء، مما عزز من مصداقيتهم وجذب جمهور جديد." data-en="Improving Brand Identity: Helped build a strong identity for clients' pages, enhancing their credibility and attracting new audiences.">تحسين العلامة التجارية: ساعدت في بناء هوية قوية لصفحات العملاء، مما عزز من مصداقيتهم وجذب جمهور جديد.</li>
+        </ul>
     </section>
 
     <section class="offers-section" id="offers">
-        <h2 class="offers-title animate__animated animate__fadeInUp" data-ar="عروضنا الخاصة" data-en="Our Special Offers">عروضنا الخاصة 🎁</h2>
+        <h2 class="offers-title animate__animated animate__fadeInUp" data-ar="عروضنا الخاصة" data-en="Our Special Offers">عروضنا الخاصة</h2>
         <div class="offers-grid">
             <div class="offer-card animate__animated animate__zoomIn">
                 <h3 class="offer-title" data-ar="عرض الــ80" data-en="Offer 80">عرض الــ80</h3>
                 <div class="offer-price">80JD</div>
                 <ul class="offer-features">
-                    <li data-ar="✅ إعداد وإنشاء صفحة كاملة لعملك" data-en="✅ Setup and creation of a complete page for your business">✅ إعداد وإنشاء صفحة كاملة لعملك</li>
-                    <li data-ar="✅ تصميم لوغو وثيم خاص بصفحتك" data-en="✅ Designing a logo and theme for your page">✅ تصميم لوغو وثيم خاص بصفحتك</li>
-                    <li data-ar="✅ عمل تصاميم للإعلانات وبوستات اعلانية يومية" data-en="✅ Creating designs for ads and daily promotional posts">✅ عمل تصاميم للإعلانات وبوستات اعلانية يومية</li>
-                    <li data-ar="✅ إدارة حملاتك الإعلانية" data-en="✅ Management of your advertising campaigns">✅ إدارة حملاتك الإعلانية</li>
-                    <li data-ar="✅ متابعة العملاء والرد على استفسارتهم" data-en="✅ Customer follow-up and responding to inquiries">✅ متابعة العملاء والرد على استفسارتهم</li>
-                    <li data-ar="✅ تمويل اعلاناتك واستهداف العملاء المحتملين" data-en="✅ Funding your ads and targeting potential customers">✅ تمويل اعلاناتك واستهداف العملاء المحتملين</li>
+                    <li data-ar="إعداد وإنشاء صفحة كاملة لعملك" data-en="Setup and creation of a complete page for your business">إعداد وإنشاء صفحة كاملة لعملك</li>
+                    <li data-ar="تصميم لوغو وثيم خاص بصفحتك" data-en="Designing a logo and theme for your page">تصميم لوغو وثيم خاص بصفحتك</li>
+                    <li data-ar="عمل تصاميم للإعلانات وبوستات اعلانية يومية" data-en="Creating designs for ads and daily promotional posts">عمل تصاميم للإعلانات وبوستات اعلانية يومية</li>
+                    <li data-ar="إدارة حملاتك الإعلانية" data-en="Management of your advertising campaigns">إدارة حملاتك الإعلانية</li>
+                    <li data-ar="متابعة العملاء والرد على استفسارتهم" data-en="Customer follow-up and responding to inquiries">متابعة العملاء والرد على استفسارتهم</li>
+                    <li data-ar="تمويل اعلاناتك واستهداف العملاء المحتملين" data-en="Funding your ads and targeting potential customers">تمويل اعلاناتك واستهداف العملاء المحتملين</li>
                 </ul>
                 <a 
                     href="https://www.facebook.com/permalink.php?story_fbid=pfbid0oh4J1TwyYgBwm47UpcGW1duimxb9XdyeKwvh2YpNVtovdg1PyqRdmo8uRWWs1jmQl&id=61569700624411" 
@@ -563,9 +706,7 @@
         <h2 class="contact-title animate__animated animate__fadeInUp" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
         <div class="contact-options">
             <a href="https://www.messenger.com/t/480197935179619" class="contact-button animate__animated animate__zoomIn" target="_blank" data-ar="ماسنجر" data-en="Messenger">ماسنجر</a>
-            <a href="https://wa.me/962791044458
-
-" class="contact-button whatsapp animate__animated animate__zoomIn" target="_blank" data-ar="واتساب" data-en="WhatsApp">واتساب</a>
+            <a href="https://wa.me/962791044458" class="contact-button whatsapp animate__animated animate__zoomIn" target="_blank" data-ar="واتساب" data-en="WhatsApp">واتساب</a>
         </div>
     </section>
 
@@ -573,6 +714,9 @@
         <h2 class="about-title animate__animated animate__fadeInUp" data-ar="من نحن" data-en="About Us">من نحن</h2>
         <p class="about-description animate__animated animate__fadeInUp" data-ar="نحن نعمل على تصميم الصور من المنزل. نحن نقدم خدمات إدارة صفحات الفيسبوك، تصميم الإعلانات، وإدارة الحملات الإعلانية. هدفنا هو مساعدتك في تحقيق النجاح لعملك من خلال حلول تسويقية مبتكرة وفعالة." data-en="We work on designing images from home. We offer Facebook page management, ad design, and advertising campaign management. Our goal is to help you achieve success for your business through innovative and effective marketing solutions.">
             نحن نعمل على تصميم الصور من المنزل. نحن نقدم خدمات إدارة صفحات الفيسبوك، تصميم الإعلانات، وإدارة الحملات الإعلانية. هدفنا هو مساعدتك في تحقيق النجاح لعملك من خلال حلول تسويقية مبتكرة وفعالة.
+        </p>
+        <p class="about-description animate__animated animate__fadeInUp" data-ar="إذا كنت بحاجة إلى إدارة لصفحتك على فيسبوك، فنحن هنا لمساعدتك في تحقيق النجاح!" data-en="If you need management for your Facebook page, we are here to help you achieve success!">
+            إذا كنت بحاجة إلى إدارة لصفحتك على فيسبوك، فنحن هنا لمساعدتك في تحقيق النجاح!
         </p>
     </section>
 
