@@ -361,6 +361,10 @@
             color: var(--text-black);
             max-width: 500px;
             margin: 0 auto;
+            min-height: 500px; /* Added to ensure both cards have the same height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .offer-card:hover {
@@ -372,6 +376,10 @@
             font-family: 'Poppins', sans-serif;
             color: var(--primary-color);
             margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
 
         .offer-price {
@@ -381,16 +389,32 @@
             font-weight: bold;
         }
 
+        .offer-price img {
+            max-width: 100px; /* يمكنك تعديل الحجم حسب رغبتك */
+            height: auto;
+            vertical-align: middle;
+        }
+
         .offer-features {
             list-style: none;
             padding: 0;
             text-align: right;
+            flex-grow: 1; /* Allow the features list to grow and fill available space */
         }
 
         .offer-features li {
             margin: 0.5rem 0;
             padding: 8px 0;
             border-bottom: 1px dashed #ddd;
+        }
+
+        .discount-badge {
+            background: var(--accent-color);
+            color: var(--text-white);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
 
         .contact-section {
@@ -680,6 +704,29 @@
                     <li data-ar="إدارة حملاتك الإعلانية" data-en="Management of your advertising campaigns">إدارة حملاتك الإعلانية</li>
                     <li data-ar="متابعة العملاء والرد على استفسارتهم" data-en="Customer follow-up and responding to inquiries">متابعة العملاء والرد على استفسارتهم</li>
                     <li data-ar="تمويل اعلاناتك واستهداف العملاء المحتملين" data-en="Funding your ads and targeting potential customers">تمويل اعلاناتك واستهداف العملاء المحتملين</li>
+                </ul>
+                <a 
+                    href="order.html" 
+                    class="cta-button" 
+                    style="display: block; text-align: center; margin-top: 1rem;"
+                    data-ar="اطلب الآن" data-en="Order Now"
+                >
+                    اطلب الآن
+                </a>
+            </div>
+            <div class="offer-card animate__animated animate__zoomIn">
+                <h3 class="offer-title" data-ar="اشتراك الـ100" data-en="Subscription 100">اشتراك الـ100 <span class="discount-badge">خصم 15%</span></h3>
+                <div class="offer-price">85JD</div>
+                <ul class="offer-features">
+                    <li data-ar="✅ 500 متابع حقيقي للصفحة" data-en="✅ 500 real followers for the page">✅ 500 متابع حقيقي للصفحة</li>
+                    <li data-ar="✅ 50 إعجاب حقيقي على الصفحة" data-en="✅ 50 real likes on the page">✅ 50 إعجاب حقيقي على الصفحة</li>
+                    <li data-ar="✅ اعداد وانشاء صفحة كاملة لعملك" data-en="✅ Setup and creation of a complete page for your business">✅ اعداد وانشاء صفحة كاملة لعملك</li>
+                    <li data-ar="✅ تصميم لوغو وثيم خاص بصفحتك" data-en="✅ Designing a logo and theme for your page">✅ تصميم لوغو وثيم خاص بصفحتك</li>
+                    <li data-ar="✅ إدارة كاملة لصفحتك الفيسبوك ومتابعة عملائك" data-en="✅ Full management of your Facebook page and customer follow-up">✅ إدارة كاملة لصفحتك الفيسبوك ومتابعة عملائك</li>
+                    <li data-ar="✅ إدارة حملاتك الإعلانية" data-en="✅ Management of your advertising campaigns">✅ إدارة حملاتك الإعلانية</li>
+                    <li data-ar="✅ عمل تصاميم للإعلانات وبوستات اعلانية يومية" data-en="✅ Creating designs for ads and daily promotional posts">✅ عمل تصاميم للإعلانات وبوستات اعلانية يومية</li>
+                    <li data-ar="✅ متابعة العملاء والرد على استفسارتهم" data-en="✅ Customer follow-up and responding to inquiries">✅ متابعة العملاء والرد على استفسارتهم</li>
+                    <li data-ar="✅ تمويل اعلاناتك واستهداف العملاء المحتملين" data-en="✅ Funding your ads and targeting potential customers">✅ تمويل اعلاناتك واستهداف العملاء المحتملين</li>
                 </ul>
                 <a 
                     href="order.html" 
